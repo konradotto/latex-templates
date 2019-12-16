@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% writeLaTeX Example: A quick guide to LaTeX
+%
+% Source: Dave Richeson (divisbyzero.com), Dickinson College
+% 
+% A one-size-fits-all LaTeX cheat sheet. Kept to two pages, so it 
+% can be printed (double-sided) on one piece of paper
+% 
+% Feel free to distribute this example, but please keep the referral
+% to divisbyzero.com
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage{todonotes}
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{Quick Guide to Project Evil}
+
+\begin{document}
+
+%\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{A quick guide to Project Evil}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{What is Project Evil?}
+Project Evil is a console based application developed for professional project management tasks.
+The Program features multiple important tools needed for big projects such as team-based work, risk management with visualization in a risk matrix and scheduling of tasks.
+
+With these capabilities Project Evil\texttrademark fulfills all requirements to be awarded the Bronze and Silver award by the international committee for Team Programming Software during this year's award ceremony.
+
+A team of Evil Corp programmers created the current version of the program,  Project Evil\ 1.0, over the past 2 month.
+
+\section{Setting Up the System}
+After cloning or pulling the project from the repository, make sure to install the Gson-library from \verb|com/corp/evil/gson-2.8.5.jar|. Ignore the test-cases in \verb|com/corp/evil/test| and run OurMain under \verb|com/corp/evil/main/OurMain.java| instead.\\
+If you intend to run the program outside of an IDE, please use the java-compiler to compile the project first and then continue by running the compiled \verb|OurMain.class| using java.
+
+For our test cases you might need to import junit-tests (version 4). Alternatively you can just exclude them from your build.
+
+\section{The Main Application}
+\subsection{Setting an Active Project}
+Once you start the Main Application, it will give you three numbered options and ask you to choose one by entering the corresponding number. This pattern of choosing an option by entering a number will repeatedly occur when using the program. This first choice is basically about loading either loading an existing project from its JSON-file or creating a new one.
+
+If you choose to load an existing program a file-picker will pop-up and ask you to select a file to load from. Once you have selected a file to load, it will ask you whether you wish to save the project to a new file from now on. This option is provided as the the program is designed to automatically save changes to the project. (The current version is delivered with an example project saved under \verb|dit092-project-managment-tool/broject.json|)  
+
+Should you choose to create a new project, you are asked to enter some basic information for your project. Please be aware, that the start- and end-date of a project are specified by year and calendar week. The start date can not be changed once it has been set.
+
+Now that you have a project, it is time to work on it using the main menu.
+
+\subsection{Navigating the Main Menu}
+The Main Menu simply constitutes of a dialogue steering you to the part of the application you wish to visit.
+As before, you can choose how you proceed by simply entering the number of one of the corresponding options.
+
+The Main Menu will quickly become familiar as you will return to it whenever you are done editing or inspecting one of the aspects of your project.
+
+\subsubsection{The Project}
+This sub menu can be used to display the complete project with all the information on its workers, tasks, risks and budget.
+
+Aside from that you are in the right place here should you wish to change the name of your project or extend or shorten it by changing its end date. Just select "Edit Project" to access these features.
+
+\subsection{Teams and Members}
+In this sub menu, you can print all members registered for this project. The displayed table will show the members sorted alphabetically by name, their hourly salary and the time they have spent working on this project so far.\\
+
+Here you can also print all teams or add new members to the project. When creating a new member, you will be asked to enter their name and hourly salary. The salary will be assumed to be in the currency set before compiling the program. 
+
+You can also edit and display members from here. Choosing this option will prompt you to choose a member by either searching by name or selecting them from a list of possible options before editing their data or displaying their work contribution.
+
+In this menu you can also create new teams giving them only a name. Once the team is created you can use the team-editing menu to add and remove members or change the team-name.
+
+\subsection{Schedule and Tasks}
+Use this sub menu to display all tasks associated with the project. Doing this will show a table of tasks sorted by their start-date. The table shows the name, start, end, level of completion and team for all tasks associated with the project. 
+
+This menu is also the right place for adding new tasks and editing them which can be used to change their name, end week, end year or assign a team to be linked with the task. Another important feature of editing a task is letting someone work on it to progress it. In order to have someone work on a task, you need to select a person from the team working on the task, enter the number of hours the person spent and and the hours of scheduled work that have been done in the progress.
+
+\subsection{Handling Risks}
+Use the risk menu whenever you want to see the risk matrix for the project or add/remove risks to/from your project. Adding risks requires you to enter their likelihood (1 to 5) and impact (1 to 5) and calculates the risk from those two values.
+
+\subsection{Budget and Cost}
+Going to this menu allows you to print the total of all budget-related values for the project or selecting single values for print. Since the schedule variance depends on a date in relation to which it is calculated, you can also adapt that date using this menu.
+
+\subsection{Leaving the Application}
+The application can easily be left from the main menu. Leaving the application will result in the changes to the current project being saved to the project-specific save-file location. The project will be saved in the json-file-format using Google's Gson-library.\\
+The file can easily be loaded when restarting the program.
+
+\section{Repository}
+We were developing our program using GitLab. As we couldn't find a way of sharing the repository without making it and all its data public and therefore accessible to mending by unknown people, we decided to clone it to a new public repository to give the graders access.\\
+Here is the link to that repository:\\
+\url{https://gitlab.com/SpaghettiCode/evil-project.git}
+
+
+
+\section{Contributors}
+Should any issues arise with the product, please turn to one of our lead programmers to resolve the problem:
+\begin{tabular}{ll}
+\bfseries{Name:} & \bfseries{Email:}\\
+Miruna Botusan      & gusbotmi@student.gu.se\\
+Gabriela Istrate    & gusistga@student.gu.se\\
+Jakob Karlsson      & guskarjal@student.gu.se\\
+Kardo Marof         & gusmaroka@student.gu.se\\
+Jean Paul Massoud   & gusjeanma@student.gu.se\\
+Marcus Olsson       & gusolsmaeh@student.gu.se\\
+Konrad Otto         & gusottko@student.gu.se\\
+\end{tabular}
+\end{multicols}
+
+\end{document}
