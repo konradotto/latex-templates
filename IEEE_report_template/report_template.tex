@@ -1,0 +1,87 @@
+
+%% report_template.tex
+%% V1.0
+%% 2012-03-16
+%% by Jesper Pedersen Notander
+%% See:
+%% http://www.cs.lth.se/jesper_pedersen_notander
+%% for current contact information.
+%%
+%% This is a template file contaning instructions and a skeleton outline 
+%% for the final report in the course ETSA05: Software Engineering 
+%% Process - Soft Issues, given by the Department of Computer Science at 
+%% Lund University, Sweden.
+%% 
+%% This template requires IEEEtran.cls, written by Michael Shell, version 
+%% 1.7 or later.
+%%
+%% Support sites:
+%% http://www.cs.lth.se/etsa05/
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%%
+%% User assumes all risk.
+%%
+%% In no event shall Lund University or any contributor to this code be 
+%% liable for any damages or losses, including, but not limited to, 
+%% incidental, consequential, or any other damages, resulting from the use 
+%% or misuse of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by Lund University.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%%
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: report_template.tex
+%%*************************************************************************
+
+
+\documentclass[conference]{IEEEtran}
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+\input{setup.tex}
+\input{meta.tex}
+
+\begin{document}
+
+\title{Applied Process Improvement on the Example of a Lego Scrum Workshop}
+%\title{Lego Scrum: A SPI Case Study}
+
+% Fill in the name! Papers without a name on it will not be graded!
+\author{
+\IEEEauthorblockN{\authorOne}
+\IEEEauthorblockA{\subject\\
+Bachelor Program Software Engineering and Management\\
+Department of Computer Science and Engineering\\
+University of Gothenburg\\
+Gothenburg, Sweden}}
+
+\maketitle
+
+\input{sections/00_abstract.tex}
+\input{sections/01_introduction.tex}
+\input{sections/08_summary.tex}
+
+% references section
+{\footnotesize
+\bibliography{literature}
+}
+
+\end{document}
+
+
